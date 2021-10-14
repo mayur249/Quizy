@@ -28,9 +28,7 @@ const Home = ({ name, setName, fetchQuestions }) => {
 
   const history = useHistory();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmit = () => {
     if (!category || !difficulty || !name) {
       setError(true);
     } else {

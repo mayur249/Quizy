@@ -5,7 +5,7 @@ import "./App.css";
 import { Footer, Header, Home, Quiz, Result } from "./components";
 
 function App() {
-  const [name, setName] = useState("initialState");
+  const [name, setName] = useState("");
   const [questions, setQuestions] = useState();
   const [score, setScore] = useState(0);
 
@@ -16,7 +16,7 @@ function App() {
       }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
     );
 
-    console.log("DATA", data);
+    setQuestions(data.results);
   };
 
   return (
@@ -44,7 +44,7 @@ function App() {
             />
           </Route>
           <Route path="/result" exact>
-            <Result />
+            <Result name={name} score={score} />
           </Route>
         </Switch>
       </div>
