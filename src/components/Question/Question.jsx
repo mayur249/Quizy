@@ -3,6 +3,7 @@ import { ErrorMessage } from "../";
 import { Button } from "@material-ui/core";
 import "./Question.css";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const Question = ({
   currQuestion,
@@ -70,19 +71,20 @@ const Question = ({
           ))}
         </div>
         <div className="controls">
-          <Button
-            variant="contained"
-            color="primary"
-            style={{
-              backgroundColor: "#3c0e06",
-              width: 185,
-            }}
-            size="large"
-            href="/"
-            onClick={handleQuit}
-          >
-            Quit
-          </Button>
+          <Link to="/">
+            <Button
+              variant="contained"
+              color="primary"
+              style={{
+                backgroundColor: "#3c0e06",
+                width: 185,
+              }}
+              size="large"
+              onClick={handleQuit}
+            >
+              Quit
+            </Button>
+          </Link>
           <Button
             variant="contained"
             color="primary"
